@@ -37,7 +37,7 @@ section:
 $ bundle exec kitchen login default-centos-65
 [vagrant@default-centos-65] $ cd collectd
 [vagrant@default-centos-65] $ bundle install
-[vagrant@default-centos-65] $ bundle exec omnibus build collectd --log-level=debug
+[vagrant@default-centos-65] $ bundle exec omnibus build collectd --log-level=debug | tee -a build.log
 ```
 
 rpm and/or debs appears in pkg directory.
