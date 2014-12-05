@@ -10,8 +10,6 @@ provisioner:
   require_chef_omnibus: true
 
 platforms:
-  - name: ubuntu-12.04
-    run_list: apt::default
   - name: centos-6.5
 
 suites:

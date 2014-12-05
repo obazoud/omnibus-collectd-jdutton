@@ -27,19 +27,8 @@ command.
 ```shell
 $ bundle install
 $ berks install
-$ bundle exec kitchen converge default-centos-65
+$ bundle exec kitchen verify
 ```
-
-Then login to the instance and build the project as described in the Usage
-section:
-
-```shell
-$ bundle exec kitchen login default-centos-65
-[vagrant@default-centos-65] $ cd collectd
-[vagrant@default-centos-65] $ bundle install
-[vagrant@default-centos-65] $ bundle exec omnibus build collectd --log-level=debug | tee -a build.log
-```
-
 rpm and/or debs appears in pkg directory.
 
 For a complete list of all commands and platforms, run `kitchen list` or

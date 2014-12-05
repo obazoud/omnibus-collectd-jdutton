@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Use Berkshelf for resolving cookbook dependencies
-gem 'berkshelf', '~> 3.1'
+gem 'berkshelf', '~> 3.2'
 
 # Install omnibus software
 gem 'omnibus', github: 'opscode/omnibus', ref: '8fcaf3c'
