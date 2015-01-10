@@ -70,6 +70,7 @@ plugin_opts = [
   "--enable-dns",
   "--enable-ping --with-liboping=#{install_dir}/embedded",
   "--enable-python",
+  "--enable-user",
   "--enable-write_riemann",
   "--enable-write_http",
   "--enable-write_graphite",

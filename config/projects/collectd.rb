@@ -23,7 +23,7 @@ replace        "collectd"
 
 install_dir     '/opt/collectd'
 build_version   "5.4.0"
-build_iteration 2
+build_iteration 3
 
 # creates required build directories
 dependency 'preparation'
