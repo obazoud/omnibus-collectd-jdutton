@@ -48,6 +48,9 @@ dependency "percona-dev"
 # Python plugin
 dependency "python"
 
+# DBI plugin
+dependency "libdbi"
+
 source :url => "http://collectd.org/files/collectd-#{version}.tar.gz",
        :md5 => "d4176b3066f3b85d85343d3648ea43f6"
 
@@ -67,6 +70,7 @@ plugin_opts = [
   "--enable-curl",
   "--enable-curl_json",
   "--enable-curl_xml",
+  "--enable-dbi",
   "--enable-dns",
   "--enable-ping --with-liboping=#{install_dir}/embedded",
   "--enable-python",
