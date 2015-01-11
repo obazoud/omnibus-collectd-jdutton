@@ -51,6 +51,9 @@ dependency "python"
 # DBI plugin
 dependency "libdbi"
 
+# Notify email
+dependency "libesmtp"
+
 source :url => "http://collectd.org/files/collectd-#{version}.tar.gz",
        :md5 => "d4176b3066f3b85d85343d3648ea43f6"
 
@@ -73,6 +76,7 @@ plugin_opts = [
   "--enable-dbi",
   "--enable-dns",
   "--enable-mysql",
+  "--enable-notify_email",
   "--enable-ping --with-liboping=#{install_dir}/embedded",
   "--enable-python",
   "--enable-user",
