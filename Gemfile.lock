@@ -1,16 +1,16 @@
 GIT
   remote: git://github.com/opscode/omnibus-software.git
-  revision: ff7d627e7dfb80e2d9905d66c476e1d2498ad79e
-  ref: ff7d627
+  revision: e84914afce6feb98edcb718cf27fd9a2467e9187
+  ref: e84914a
   specs:
     omnibus-software (4.0.0)
 
 GIT
   remote: git://github.com/opscode/omnibus.git
-  revision: 8fcaf3cbfa11738be5c3f6bcb82137dcfdd2d1d1
-  ref: 8fcaf3c
+  revision: e3a36f530343ab36f936d4900295ac27d189e834
+  tag: v4.0.0
   specs:
-    omnibus (4.0.0.alpha)
+    omnibus (4.0.0)
       chef-sugar (~> 2.2)
       cleanroom (~> 1.0)
       mixlib-shellout (~> 1.4)
@@ -22,7 +22,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.6)
-    berkshelf (3.2.1)
+    berkshelf (3.2.2)
       addressable (~> 2.3.4)
       berkshelf-api-client (~> 1.2)
       buff-config (~> 1.0)
@@ -53,14 +53,14 @@ GEM
     celluloid-io (0.16.1)
       celluloid (>= 0.16.0)
       nio4r (>= 1.0.0)
-    chef-sugar (2.4.1)
+    chef-sugar (2.5.0)
     cleanroom (1.0.0)
     dep-selector-libgecode (1.0.2)
     dep_selector (1.0.3)
       dep-selector-libgecode (~> 1.0)
       ffi (~> 1.9)
     erubis (2.7.0)
-    faraday (0.9.0)
+    faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
     ffi-yajl (1.3.1)
@@ -69,7 +69,7 @@ GEM
     hashie (2.1.2)
     hitimes (1.2.2)
     ipaddress (0.8.0)
-    json (1.8.1)
+    json (1.8.2)
     kitchen-vagrant (0.15.0)
       test-kitchen (~> 1.0)
     libyajl2 (1.2.0)
@@ -85,8 +85,8 @@ GEM
     net-http-persistent (2.9.4)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (2.9.1)
-    nio4r (1.0.1)
+    net-ssh (2.9.2)
+    nio4r (1.1.0)
     octokit (3.7.0)
       sawyer (~> 0.6.0, >= 0.5.3)
     ohai (7.4.0)
@@ -101,7 +101,7 @@ GEM
       systemu (~> 2.6.4)
       wmi-lite (~> 1.0)
     retryable (1.3.6)
-    ridley (4.1.0)
+    ridley (4.1.1)
       addressable
       buff-config (~> 1.0)
       buff-extensions (~> 1.0)

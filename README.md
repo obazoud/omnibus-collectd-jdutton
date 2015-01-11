@@ -33,3 +33,14 @@ rpm and/or debs appears in pkg directory.
 
 For a complete list of all commands and platforms, run `kitchen list` or
 `kitchen help`.
+
+TODO
+
+gmond
+java + jmx
+lvm
+mysql
+notify_email
+oracle
+postgresql
+snmp
