@@ -43,7 +43,7 @@ dependency "libgcrypt"
 dependency "rabbitmq-c"
 
 # MySQL plugin
-dependency "percona-dev"
+dependency "mysql"
 
 # Python plugin
 dependency "python"
@@ -72,6 +72,7 @@ plugin_opts = [
   "--enable-curl_xml",
   "--enable-dbi",
   "--enable-dns",
+  "--enable-mysql",
   "--enable-ping --with-liboping=#{install_dir}/embedded",
   "--enable-python",
   "--enable-user",
