@@ -57,23 +57,20 @@ dependency "libesmtp"
 # Java
 dependency "server-jre"
 
+# Postgresql
+dependency "postgresql"
+
 source :url => "http://collectd.org/files/collectd-#{version}.tar.gz",
        :md5 => "d4176b3066f3b85d85343d3648ea43f6"
 
 relative_path "collectd-#{version}"
 
-configure_env = {
-  "LDFLAGS" => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include -L/lib -L/usr/lib",
-  "CFLAGS" => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
-  "CXXFLAGS" => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
-  "CPPFLAGS" => "-L#{install_dir}/embedded/lib -I#{install_dir}/embedded/include",
-  "LD_RUN_PATH" => "#{install_dir}/embedded/lib",
-  "PATH" => "#{install_dir}/embedded/bin:#{ENV["PATH"]}",
-}
+env = with_standard_compiler_flags(with_embedded_path)
 
 plugin_opts = [
   "--with-python=#{install_dir}/embedded/bin/python",
   "--with-java=#{install_dir}/embedded/jre",
+  "--with-pg-config=#{install_dir}/embedded/bin/pg_config",
   "--without-perl-bindings",
   "--enable-curl",
   "--enable-curl_json",
@@ -84,6 +81,7 @@ plugin_opts = [
   "--enable-mysql",
   "--enable-notify_email",
   "--enable-ping --with-liboping=#{install_dir}/embedded",
+  "--enable-postgresql",
   "--enable-python",
   "--enable-user",
   "--enable-write_riemann",
@@ -95,9 +93,9 @@ plugin_opts = [
 build do
   # patch-aa: fix libxml2 detection without pkg-config
   patch :source => 'patch-aa', :plevel => 0
-  command "./configure --prefix=#{install_dir}/embedded #{plugin_opts.join(' ')}", :env => configure_env
-  command "make", :env => configure_env
-  command "make install", :env => configure_env
+  command "./configure --prefix=#{install_dir}/embedded #{plugin_opts.join(' ')}", :env => env
+  command "make", :env => env
+  command "make install", :env => env
   command "mkdir #{install_dir}/sbin #{install_dir}/etc"
   [ "sbin/collectd", "sbin/collectdmon" ].each do |bin|
     command "ln -sf #{install_dir}/embedded/#{bin} #{install_dir}/sbin/"

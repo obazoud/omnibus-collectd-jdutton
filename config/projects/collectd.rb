@@ -25,6 +25,9 @@ install_dir     '/opt/collectd'
 build_version   "5.4.0"
 build_iteration 4
 
+# Overrides
+override :libuuid, :source_url => 'http://www.mirrorservice.org/sites/ftp.ossp.org/pkg/lib/uuid/uuid-1.6.2.tar.gz'
+
 # creates required build directories
 dependency 'preparation'
 
@@ -36,3 +39,4 @@ dependency 'version-manifest'
 
 exclude '\.git*'
 exclude 'bundler\/git'
+
